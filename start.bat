@@ -1,119 +1,112 @@
 @echo off
+setlocal enabledelayedexpansion
 chcp 65001 >nul
 title Patent Searcher
 
+echo.
 echo ============================================
-echo      Patent Searcher - AI Patent Search
+echo   Patent Searcher - AI Global Patent Search
 echo ============================================
 echo.
 
 :: Check Python
-python --version >nul 2>&1
+where python >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [ERROR] Python 3.12+ is required but not found.
-    echo         Download: https://www.python.org/downloads/
+    echo [ERROR] Python not found. Install Python 3.12+
+    echo         https://www.python.org/downloads/
     pause
-    exit /b 1
+    exit /b
 )
 
 :: Check Node.js
-node --version >nul 2>&1
+where node >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [ERROR] Node.js 22+ is required but not found.
-    echo         Download: https://nodejs.org/
+    echo [ERROR] Node.js not found. Install Node.js
+    echo         https://nodejs.org/
     pause
-    exit /b 1
+    exit /b
 )
 
-:: Install frontend deps if needed
+:: Install frontend deps
 if not exist "frontend\node_modules" (
-    echo [SETUP] Installing frontend dependencies (first time only)...
+    echo [SETUP] Installing frontend dependencies...
     cd frontend
     call npm install
     cd ..
-    echo [SETUP] Done.
-    echo.
+)
+
+:: Check if .env exists, copy from example if not
+if not exist "backend\.env" (
+    echo [SETUP] Creating backend/.env from template...
+    copy .env.example backend\.env >nul
 )
 
 :: Check SerpAPI key
-findstr /C:"SERPAPI_KEY=" backend\.env > temp_key_check.txt 2>nul
-set HAS_KEY=0
-for /f "tokens=2 delims==" %%a in (temp_key_check.txt) do (
-    if not "%%a"=="" set HAS_KEY=1
-)
-del temp_key_check.txt 2>nul
-
-if %HAS_KEY%==0 (
+set KEY=
+for /f "tokens=2 delims==" %%a in ('findstr "SERPAPI_KEY" backend\.env 2^>nul') do set KEY=%%a
+if "!KEY!"=="" (
     echo.
     echo ============================================
-    echo   IMPORTANT: SerpAPI Key Required
+    echo   SerpAPI Key - Search Global Patents
     echo ============================================
     echo.
-    echo   To search global patents, you need a free API key:
+    echo   Get a free API key (30 seconds):
+    echo   1. Open https://serpapi.com
+    echo   2. Sign up -^> Get Free API Key -^> Copy
     echo.
-    echo   1. Open https://serpapi.com in your browser
-    echo   2. Click "Get Free API Key" and sign up (30s)
-    echo   3. Copy your key
-    echo.
-    set /p USER_KEY="   Paste your SerpAPI key here (or press Enter to skip): "
-    if not "!USER_KEY!"=="" (
-        powershell -Command "(Get-Content backend\.env) -replace 'SERPAPI_KEY=.*', 'SERPAPI_KEY=!USER_KEY!' | Set-Content backend\.env"
-        echo   Key saved!
-    ) else (
-        echo   Skipped. Will use local search mode only.
+    set /p NEWKEY="   Paste your key (Enter to skip): "
+    if not "!NEWKEY!"=="" (
+        powershell -NoProfile -Command "(Get-Content backend\.env) -replace 'SERPAPI_KEY=.*', 'SERPAPI_KEY=!NEWKEY!' | Set-Content backend\.env -Encoding UTF8"
+        echo   Key saved.
     )
-    echo.
 )
 
-:: Install Python deps if needed
+:: Install Python deps
 python -c "import fastapi" 2>nul
 if %errorlevel% neq 0 (
-    echo [SETUP] Installing Python dependencies (first time only)...
+    echo [SETUP] Installing Python dependencies...
     cd backend
-    pip install -r requirements.txt
+    pip install -q -r requirements.txt
     cd ..
-    echo [SETUP] Done.
-    echo.
 )
 
-:: Build FAISS index if needed
+:: Build FAISS index
 if not exist "backend\data\faiss_index.bin" (
-    echo [SETUP] Building patent index (first time only)...
+    echo [SETUP] Building search index...
     cd backend
     python -m app.services.data_importer
     cd ..
-    echo.
 )
 
-echo [1/2] Starting backend server (loading AI model, ~20s first time)...
-start "PatentSearcher-Backend" cmd /c "cd backend && python run_server.py"
+echo.
+echo [1/2] Starting backend (first run downloads AI model ~80MB)...
+start "PatentSearcher-Backend" /min cmd /c "cd /d %cd%\backend && python run_server.py && pause"
 
-echo         Waiting for backend...
+echo         Waiting for backend to be ready...
 :wait_backend
 timeout /t 3 /nobreak >nul
 curl -s http://localhost:8766/api/health >nul 2>&1
 if %errorlevel% neq 0 goto wait_backend
-echo         Backend ready!
+echo         Backend ready.
 
 echo [2/2] Starting frontend...
-start "PatentSearcher-Frontend" cmd /c "cd frontend && npm run dev"
+start "PatentSearcher-Frontend" /min cmd /c "cd /d %cd%\frontend && npm run dev"
 
 echo         Waiting for frontend...
 :wait_frontend
 timeout /t 2 /nobreak >nul
 curl -s http://localhost:3000 >nul 2>&1
 if %errorlevel% neq 0 goto wait_frontend
-echo         Frontend ready!
+echo         Frontend ready.
 
 echo.
 echo ============================================
-echo      All systems ready!
-echo      Opening browser...
+echo   All systems ready - Opening browser
 echo ============================================
+echo.
 start http://localhost:3000/search
 
-echo.
 echo Close this window to stop all services.
 pause >nul
+
 taskkill /FI "WINDOWTITLE eq PatentSearcher-*" /F >nul 2>&1
-echo Services stopped.
