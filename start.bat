@@ -1,4 +1,5 @@
 @echo off
+setlocal enabledelayedexpansion
 title Patent Searcher
 
 :: Change to the script's directory (fixes "System32" issue)
@@ -44,18 +45,26 @@ if not exist "%~dp0frontend\node_modules\" (
     echo Done.
 )
 
-:: Config file
+:: Create .env from template if missing
 if not exist "%~dp0backend\.env" (
-    echo.
     echo Creating config from template...
     copy "%~dp0.env.example" "%~dp0backend\.env" >nul
+)
+
+:: Check SerpAPI key
+powershell -NoProfile -Command "if ((Get-Content '%~dp0backend\.env'|Select-String 'SERPAPI_KEY=(.+)').Matches.Groups[1].Value.Length -gt 0){exit 0}else{exit 1}" >nul 2>&1
+if !errorlevel! neq 0 (
     echo.
     echo ============================================
-    echo   Enter your SerpAPI key (free)
-    echo   Get one at: https://serpapi.com
+    echo   SerpAPI Key Required
+    echo   Get free key at: https://serpapi.com
     echo ============================================
-    set /p KEY="Key (Enter to skip): "
-    call :writekey
+    set /p NEWKEY="   Paste key (Enter to skip): "
+    if not "!NEWKEY!"=="" (
+        powershell -NoProfile -Command "(Get-Content '%~dp0backend\.env') -replace 'SERPAPI_KEY=.*', 'SERPAPI_KEY=!NEWKEY!' | Set-Content '%~dp0backend\.env' -Encoding UTF8"
+        echo   Key saved.
+    )
+    echo.
 )
 
 :: Python deps
@@ -117,11 +126,4 @@ pause >nul
 
 taskkill /FI "WINDOWTITLE eq Backend" /F >nul 2>&1
 taskkill /FI "WINDOWTITLE eq Frontend" /F >nul 2>&1
-exit /b
-
-:writekey
-if not "%KEY%"=="" (
-    powershell -NoProfile -Command "(Get-Content '%~dp0backend\.env') -replace 'SERPAPI_KEY=.+', 'SERPAPI_KEY=%KEY%' | Set-Content '%~dp0backend\.env'"
-    echo   Key saved.
-)
 exit /b
