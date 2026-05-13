@@ -1,0 +1,50 @@
+# Patent Searcher Configuration
+# Copy this to config.local.yaml and fill in your keys
+
+# AI / LLM
+llm:
+  provider: deepseek          # openai | anthropic | deepseek | dashscope | ollama
+  model: deepseek-chat
+  api_key: "9e33a8c224a046a2cec21d59b79c7314a432863f0e557be1cc2f01552799e456"
+  base_url: "https://api.deepseek.com/v1"
+
+# Embedding
+embedding:
+  model: all-MiniLM-L6-v2
+  device: cpu
+
+# Patent Data Sources (searched in parallel)
+sources:
+  google_patents:
+    enabled: true
+    serpapi_key: ""           # Free at https://serpapi.com (100/mo)
+
+  espacenet:
+    enabled: true
+    # Free, no key needed (limited anonymous quota)
+
+  lens:
+    enabled: true
+    # Free scholarly patent search, no key needed
+
+  wipo:
+    enabled: false
+    # WIPO Patentscope, free but rate-limited
+
+# Download
+download:
+  max_retries: 3
+  timeout_seconds: 60
+  save_directory: "./downloads"
+
+# Database (optional - for local patent caching)
+database:
+  url: "postgresql+asyncpg://patent:patent123@localhost:5432/patent_search"
+
+# Server
+server:
+  host: "0.0.0.0"
+  port: 8766
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://127.0.0.1:3000"

@@ -4,25 +4,31 @@ from fastapi.responses import StreamingResponse
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.schemas.patent import SearchIntentRequest, PatentSearchResult
 from app.db.session import get_db
-from app.agents.search_agent import search_agent
 from app.agents.patent_extractor import patent_extractor
 from app.agents.similarity_agent import similarity_agent
-from app.services.patent_store import patent_store
+from app.core.config import settings
+from app.search.providers import MultiSourceSearcher
 from pydantic import BaseModel
 
 router = APIRouter()
 
 
+def _get_searcher() -> MultiSourceSearcher:
+    return MultiSourceSearcher(serpapi_key=settings.SERPAPI_KEY)
+
+
 @router.post("/intent")
 async def search_by_intent(request: SearchIntentRequest):
-    """F1: 专利意图解读搜索 — Google Patents(SerpAPI) + 本地FAISS"""
-    from app.core.config import settings
+    """F1: 全球专利搜索 — 多数据源并行 (Google Patents + Espacenet + Lens)"""
+    searcher = _get_searcher()
+    all_results = await searcher.search_all(request.query, num=request.top_k)
 
-    result = await search_agent.search(request.query, top_k=request.top_k)
-    for r in result.get("results", []):
-        patent_store.populate(r)
-
-    return {"query": request.query, **result}
+    return {
+        "query": request.query,
+        "total": len(all_results),
+        "results": [r.to_dict() for r in all_results],
+        "sources_used": list(set(r.source for r in all_results)),
+    }
 
 
 @router.post("/intent/stream")
