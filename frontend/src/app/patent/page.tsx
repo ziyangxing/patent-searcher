@@ -24,7 +24,7 @@ export default function PatentNumberPage() {
         </p>
         <div className="mt-6 flex gap-3">
           <Input
-            placeholder="输入专利号，如 CN110123456A"
+            placeholder="输入专利号，如 US11581631B2"
             value={number}
             onChange={(e) => setNumber(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleSearch()}
