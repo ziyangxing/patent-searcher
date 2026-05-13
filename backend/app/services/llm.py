@@ -8,85 +8,49 @@ class LLMService:
         self.default_model = self._resolve_model()
 
     def _resolve_model(self) -> str:
-        provider = settings.LLM_PROVIDER
-        model = settings.LLM_MODEL
-        if provider == "openai":
-            return f"openai/{model}"
-        elif provider == "anthropic":
-            return f"anthropic/{model}"
-        elif provider == "ollama":
-            return f"ollama/{model}"
-        elif provider == "dashscope":
-            return f"dashscope/{model}"
-        return model
+        p = settings.LLM_PROVIDER
+        m = settings.LLM_MODEL
+        if p == "deepseek":
+            return f"openai/{m}"
+        return f"{p}/{m}" if p != "openai" else f"openai/{m}"
+
+    def _kwargs(self) -> dict:
+        k = {}
+        if settings.LLM_PROVIDER == "deepseek":
+            k["api_base"] = settings.OPENAI_BASE_URL
+        if settings.OPENAI_API_KEY:
+            k["api_key"] = settings.OPENAI_API_KEY
+        return k
 
     async def complete(
-        self,
-        prompt: str,
-        system_prompt: str | None = None,
-        model: str | None = None,
-        temperature: float = 0.2,
-        max_tokens: int = 2048,
+        self, prompt: str, system_prompt: str | None = None,
+        model: str | None = None, temperature: float = 0.2, max_tokens: int = 2048,
     ) -> str:
         messages = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
         messages.append({"role": "user", "content": prompt})
-
         response = await litellm.acompletion(
-            model=model or self.default_model,
-            messages=messages,
-            temperature=temperature,
-            max_tokens=max_tokens,
+            model=model or self.default_model, messages=messages,
+            temperature=temperature, max_tokens=max_tokens, **self._kwargs(),
         )
         return response.choices[0].message.content
 
     async def stream_complete(
-        self,
-        prompt: str,
-        system_prompt: str | None = None,
-        model: str | None = None,
-        temperature: float = 0.2,
-        max_tokens: int = 2048,
+        self, prompt: str, system_prompt: str | None = None,
+        model: str | None = None, temperature: float = 0.2, max_tokens: int = 2048,
     ) -> AsyncIterator[str]:
         messages = []
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
         messages.append({"role": "user", "content": prompt})
-
         response = await litellm.acompletion(
-            model=model or self.default_model,
-            messages=messages,
-            temperature=temperature,
-            max_tokens=max_tokens,
-            stream=True,
+            model=model or self.default_model, messages=messages,
+            temperature=temperature, max_tokens=max_tokens, stream=True, **self._kwargs(),
         )
         async for chunk in response:
             if chunk.choices[0].delta.content:
                 yield chunk.choices[0].delta.content
-
-    async def structured_complete(
-        self,
-        prompt: str,
-        response_model: type,
-        system_prompt: str | None = None,
-        model: str | None = None,
-        temperature: float = 0.1,
-    ):
-        import instructor
-
-        client = instructor.from_litellm(litellm.acompletion)
-        messages = []
-        if system_prompt:
-            messages.append({"role": "system", "content": system_prompt})
-        messages.append({"role": "user", "content": prompt})
-
-        return await client.chat.completions.create(
-            model=model or self.default_model,
-            messages=messages,
-            temperature=temperature,
-            response_model=response_model,
-        )
 
 
 llm_service = LLMService()
