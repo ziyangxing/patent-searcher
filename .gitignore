@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+.venv/
+venv/
+
+# Node
+node_modules/
+.next/
+out/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Env secrets
+.env
+.env.local
+frontend/.env.local
+
+# Data (keep directory, ignore binary indexes)
+data/*.bin
+data/*.ids
+uploads/*
+
+# Docker
+docker-compose.override.yml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reference projects (not part of this repo)
+302_patent_search/
+Awesome-Patent-Retrieval/
+OpenDeepSearch/
+Rops/
+Vane/
+farfalle/
+patent-similarity-rag/
+patent_search/
+patents/
+patzilla/
+pqai/
+public-apis/
+
+# Temp files
+*.pyc
+download_patents.py
+search_results.json
+patents_to_download.json
+downloaded_patents/
