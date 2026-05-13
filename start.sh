@@ -100,12 +100,6 @@ elif command -v xdg-open &> /dev/null; then
 fi
 
 echo
-echo "---------------------------------------------------"
-echo " TIP: Without SerpAPI key, searches use local demo"
-echo " data. Get a free key at https://serpapi.com for"
-echo " real global patent search (100 searches/month)."
-echo "---------------------------------------------------"
-echo
 echo "Press Enter to stop all services..."
 read
 

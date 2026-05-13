@@ -113,12 +113,6 @@ echo ============================================
 start http://localhost:3000/search
 
 echo.
-echo ---------------------------------------------------
-echo  TIP: Without SerpAPI key, searches use local demo
-echo  data. Get a free key at https://serpapi.com for
-echo  real global patent search (100 searches/month).
-echo ---------------------------------------------------
-echo.
 echo Close this window to stop all services.
 pause >nul
 taskkill /FI "WINDOWTITLE eq PatentSearcher-*" /F >nul 2>&1

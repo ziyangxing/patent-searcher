@@ -22,15 +22,6 @@ async def search_by_intent(request: SearchIntentRequest):
     for r in result.get("results", []):
         patent_store.populate(r)
 
-    # Add status info
-    if not settings.SERPAPI_KEY and not result.get("results"):
-        result["status"] = "no_api_key"
-        result["message"] = (
-            "当前使用本地数据库（仅11条示例专利）。"
-            "要搜索全球真实专利，请到 https://serpapi.com 免费注册获取API Key（100次/月），"
-            "然后在 backend/.env 中设置 SERPAPI_KEY=你的key"
-        )
-
     return {"query": request.query, **result}
 
 

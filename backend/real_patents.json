@@ -1,0 +1,802 @@
+[
+  {
+    "patent_number": "CN109070758B",
+    "title": "Battery temperature and charge regulation system and method",
+    "abstract": "A battery system includes a battery module, a thermal management system, and a battery system controller. The controller is configured to: receive data indicative of a first operating condition of the battery module and data indicative of a second operating condition of the thermal management …",
+    "publication_date": "2022-03-18",
+    "inventor": "张振利",
+    "assignee": "Cps科技控股有限公司"
+  },
+  {
+    "patent_number": "CN114930614B",
+    "title": "Electric device, method for preparing electric device and device for preparing …",
+    "abstract": "An electrical equipment, a method for preparing electrical equipment and a device for preparing electrical equipment belong to the field of battery technology. The electrical equipment includes a passenger compartment (40) and a box (11). The box (11) is used to accommodate the battery cells (12). …",
+    "publication_date": "2024-03-22",
+    "inventor": "姜利文",
+    "assignee": "宁德时代新能源科技股份有限公司"
+  },
+  {
+    "patent_number": "US20190386269A1",
+    "title": "Battery module having thermally conductive adhesive tape for battery cells",
+    "abstract": "The present disclosure includes a battery module that includes a housing having a stack of battery cells. Each battery cell of the stack of battery cells includes a terminal end having at least one cell terminal and a face oriented transverse to the terminal end. The battery module also includes …",
+    "publication_date": "2019-12-19",
+    "inventor": "Matthew R. Taylor",
+    "assignee": "Cps Technology Holdings Llc"
+  },
+  {
+    "patent_number": "US9997816B2",
+    "title": "Micro-hybrid battery module for a vehicle",
+    "abstract": "The present disclosure relates to micro-hybrid battery modules that include at least one battery cell having a titanate-based oxide anode active material with spinel structure and a high voltage spinel (LiMn 2−x M x O 4 ) cathode active material. The battery module may be configured to couple to an …",
+    "publication_date": "2018-06-12",
+    "inventor": "Yongkyu Son",
+    "assignee": "Johnson Controls Technology Company"
+  },
+  {
+    "patent_number": "US11884183B2",
+    "title": "Thermal management system for vehicles with an electric powertrain",
+    "abstract": "This patent application is directed to thermal management systems of vehicles with an electric powertrain. More specifically, the battery system and one or more powertrain components and/or cabin climate control components of a vehicle share the same thermal circuit as the battery module through …",
+    "publication_date": "2024-01-30",
+    "inventor": "Kevin Hettrich",
+    "assignee": "Quantumscape Battery, Inc."
+  },
+  {
+    "patent_number": "US20230026549A1",
+    "title": "Structural cell to pack battery",
+    "abstract": "A battery pack that includes an enclosure having at least four sidewalls and a base. An array of cells is arranged on the base, with each of the cells having a large wall surface and a small wall surface. The cells are arranged such that the large wall surfaces are parallel to each other.",
+    "publication_date": "2023-01-26",
+    "inventor": "Mujeeb Ijaz",
+    "assignee": "Our Next Energy, Inc."
+  },
+  {
+    "patent_number": "CN109962317B",
+    "title": "An electric vehicle battery module thermal management and energy recovery …",
+    "abstract": "4. The electric vehicle battery module thermal management and energy recovery system of claim 1, wherein the cooling and heating module comprises a heater, a constant pressure water pump, an electric regulating valve, a water tank, a heat exchanger, a three-way valve and a connecting pipeline; the …",
+    "publication_date": "2020-11-27",
+    "inventor": "王亚楠",
+    "assignee": "山东大学"
+  },
+  {
+    "patent_number": "US11462805B2",
+    "title": "Busbar assembly for vehicle traction battery",
+    "abstract": "A vehicle traction battery assembly including a pair of battery cells and a busbar is provided. Each of the battery cells may include a terminal and one or more locating features. The busbar may span between the cells and define a pair of arms each having a member sized to at least partially …",
+    "publication_date": "2022-10-04",
+    "inventor": "Rajaram Subramanian",
+    "assignee": "Ford Global Technologies, Llc"
+  },
+  {
+    "patent_number": "EP3195446B1",
+    "title": "Rechargeable battery system",
+    "abstract": "A rechargeable battery system comprising: a plurality of electrochemical storage cells each of which has a positive and negative terminal and which are adjacent each other and electrically connected to each other; a plurality of resistor sheets electrically connected to each other in series, …",
+    "publication_date": "2019-10-02",
+    "inventor": "Chao-Yang Wang",
+    "assignee": "EC Power, LLC"
+  },
+  {
+    "patent_number": "US10186737B2",
+    "title": "Traction battery integrated thermal plate and tray",
+    "abstract": "A vehicle traction battery assembly may include a traction battery and a battery tray. The traction battery is for powering a portion of an electrified vehicle. The battery tray is for supporting the traction battery and defines a coolant channel for distributing coolant in a first direction and a …",
+    "publication_date": "2019-01-22",
+    "inventor": "Asif Iqbal",
+    "assignee": "Ford Global Technologies, Llc"
+  },
+  {
+    "patent_number": "EP3420093B1",
+    "title": "Micelle based system nuclease encapsulation for in-vivo gene editing",
+    "abstract": "A method for encapsulating a RNA molecule encoding a TALE-Nuclease, comprising the steps of a) Engineering a RNA molecule encoding a TALE-Nuclease; b) Complexing the RNA molecule encoding said TALE-Nuclease with at least one biodegradable matrix comprising at least a core hydrophobic domain and a …",
+    "publication_date": "2022-11-23",
+    "inventor": "Philippe Duchateau",
+    "assignee": "Cellectis"
+  },
+  {
+    "patent_number": "CN114569743B",
+    "title": "Liver-specific gene editing nanomedicine and its preparation method and …",
+    "abstract": "The application belongs to the technical field of biological medicine, and particularly relates to a liver-specific gene editing nano-drug as well as a preparation method and application thereof. The application provides a liver-specific gene editing nano-drug, comprising: magnetic nanoparticles, …",
+    "publication_date": "2024-06-14",
+    "inventor": "李明强",
+    "assignee": "中山大学附属第三医院"
+  },
+  {
+    "patent_number": "US20250326754A1",
+    "title": "DNA-PK Inhibitor Compounds and Uses Thereof",
+    "abstract": "Provided are compounds and method for inhibiting DNA-dependent protein kinase (DNA-PK). Aspects of the present disclosure also include methods of using the compounds to treat disease, including, but not limited to, cancer. In certain embodiments, the compounds inhibit DNA-PK and thus sensitize …",
+    "publication_date": "2025-10-23",
+    "inventor": "Stephen Paul ARNS",
+    "assignee": "adMare Therapeutics Society"
+  },
+  {
+    "patent_number": "US12442021B2",
+    "title": "Genomic safe harbors for genetic therapies in human stem cells and engineered …",
+    "abstract": "Genomic safe harbors (GSH) for genetic therapies in human stem cells and engineered nanoparticles to provide targeted genetic therapies are described. The GSH and/or associated nanoparticles can be used to safely and efficiently treat a variety of genetic, infectious, and malignant diseases.",
+    "publication_date": "2025-10-14",
+    "inventor": "Jennifer E. Adair",
+    "assignee": "Fred Hutchinson Cancer Center"
+  },
+  {
+    "patent_number": "CN111088253A",
+    "title": "CRISPR (clustered regularly interspaced short palindromic repeats) single-base …",
+    "abstract": "The invention discloses a CRISPR single base donor repair system aiming at an HBB-28 thalassemia gene and application of the repair system in preparation of a therapeutic agent for HBB-28 thalassemia gene therapy. The CRISPR single base donor repair system comprises: (1) a CRISPR/Cas expression …",
+    "publication_date": "2020-05-01",
+    "inventor": "包煜贤",
+    "assignee": "广州鼓润医疗科技有限公司"
+  },
+  {
+    "patent_number": "CN116829691A",
+    "title": "Pulsed electric field transfer of molecules to cells in the body",
+    "abstract": "Devices, systems, and methods are provided for delivering molecules, particularly small molecules and/or large molecules, to cells in vivo, particularly to target cells that directly benefit from molecular function therapeutically. In such cases, the molecules are driven into the target cells …",
+    "publication_date": "2023-09-29",
+    "inventor": "奎姆·卡斯特尔维",
+    "assignee": "盖能适治疗股份有限公司"
+  },
+  {
+    "patent_number": "EP3180426B1",
+    "title": "Genome editing using cas9 nickases",
+    "abstract": "A non-naturally occurring or engineered composition for use in therapy, by manipulation of first and second target sequence on opposite strands of a DNA duplex in a genomic locus of interest in a cell by promoting homology directed repair, wherein the composition comprises: I. a first CRISPR-Cas …",
+    "publication_date": "2019-12-25",
+    "inventor": "Feng Zhang",
+    "assignee": "The Broad Institute, Inc."
+  },
+  {
+    "patent_number": "US20230250423A1",
+    "title": "Genome editing of human neural stem cells using nucleases",
+    "abstract": "The invention provides methods for generating a genetically modified human neural stem cell, genetically modified human neural stem cells, and pharmaceutical compositions comprising the genetically modified human neural stem cells. Also provided are associated kits. The invention also provides …",
+    "publication_date": "2023-08-10",
+    "inventor": "Matthew H. PORTEUS",
+    "assignee": "The Board Of Trustees Of The Leland Stanford Junior University"
+  },
+  {
+    "patent_number": "EP3645721A1",
+    "title": "Methods for the treatment of disease with gene editing systems",
+    "abstract": "Provided herein are methods of selectively treating a patient with a gene editing system on the basis of ascertaining the presence of a target sequence, at a target locus, that is fully complementary to a targeting domain of said gene editing system and/or on the basis of ascertaining the absence …",
+    "publication_date": "2020-05-06",
+    "inventor": "Nicole RENAUD",
+    "assignee": "Novartis AG"
+  },
+  {
+    "patent_number": "EP3080260B1",
+    "title": "Crispr-cas systems and methods for altering expression of gene products, …",
+    "abstract": "A non-naturally occurring or engineered inducible CRISPR protein, comprising: a first CRISPR protein fusion construct comprising a first fragment of a CRISPR protein attached to a first half of an inducible dimer and a second CRISPR protein fusion construct comprising a second fragment of the …",
+    "publication_date": "2019-03-06",
+    "inventor": "Feng Zhang",
+    "assignee": "The Broad Institute, Inc."
+  },
+  {
+    "patent_number": "EP3867977B1",
+    "title": "Shared ground mmwave and sub 6 ghz antenna system",
+    "abstract": "An antenna system configured to be in an electronic device (100), the antenna system (106; 150; 200) comprising: a first antenna (204) configured to operate at sub-6 gigahertz, GHz, frequencies; and a second antenna (202) configured to operate at millimeter-wave frequencies, wherein a feeding …",
+    "publication_date": "2025-06-25",
+    "inventor": "Wei Huang",
+    "assignee": "Huawei Technologies Co., Ltd."
+  },
+  {
+    "patent_number": "EP3063827B1",
+    "title": "Mm wave antenna array integrated with cellular antenna",
+    "abstract": "A wireless electronic device (100), comprising: a ground plane (230); a cellular antenna (250; 810, 820); a millimeter wave, mmW, antenna array (410; 910) coupled to a surface of a radiating element of the cellular antenna (250; 810, 820), the radiating element of the cellular antenna (250; 810, …",
+    "publication_date": "2023-08-23",
+    "inventor": "Zhinong Ying",
+    "assignee": "Sony Group Corporation"
+  },
+  {
+    "patent_number": "US8362968B2",
+    "title": "Array antenna, radio communication apparatus, and array antenna control method",
+    "abstract": "An array antenna includes a group of antenna elements and a switching section. The group of antenna elements has a configuration in which a plurality of antenna elements is arranged. The switching section has a plurality of switch elements capable of individually switching the feeding points of …",
+    "publication_date": "2013-01-29",
+    "inventor": "Junichi Fukuda",
+    "assignee": "Nec Corporation"
+  },
+  {
+    "patent_number": "CN113285897B",
+    "title": "Positioning information assistance-based channel estimation method and system …",
+    "abstract": "The invention discloses a channel estimation method and system assisted by positioning information in a RIS system under the Internet of Vehicles environment. The method of the invention includes the following steps: Step 1: Obtain the relative positions of the base station, the RIS and the …",
+    "publication_date": "2022-05-27",
+    "inventor": "曾嵘",
+    "assignee": "杭州电子科技大学"
+  },
+  {
+    "patent_number": "EP3531502B1",
+    "title": "Communication terminal",
+    "abstract": "A communications terminal (100), comprising a multiple-input multiple-output antenna system (10), wherein the multiple-input multiple-output antenna system (10) comprises a first antenna module (11), a second antenna module (12), and a first ground structure (13); the first antenna module (11) …",
+    "publication_date": "2023-04-05",
+    "inventor": "Pengfei Wu",
+    "assignee": "Huawei Technologies Co., Ltd."
+  },
+  {
+    "patent_number": "US20200028262A1",
+    "title": "High gain relay antenna system with multiple passive reflect arrays",
+    "abstract": "Examples disclosed herein relate to a high gain relay antenna system that includes a first passive reflect array configured to receive electromagnetic radiation from a transmitting source and generate a transmit beamforming signal with a first gain from the electromagnetic radiation. The high gain …",
+    "publication_date": "2020-01-23",
+    "inventor": "Jun Fang",
+    "assignee": "Metawave Corporation"
+  },
+  {
+    "patent_number": "US8482478B2",
+    "title": "MIMO antenna system",
+    "abstract": "A wireless local area network (“WLAN”) antenna array (“WLANAA”) includes a circular housing having a plurality of radial sectors and a plurality of primary antenna elements configured as Multiple-Input, Multiple-Output (MIMO) antennas. Each primary antenna element, which includes multiple antennas …",
+    "publication_date": "2013-07-09",
+    "inventor": "Abraham Hartenstein",
+    "assignee": "Xirrus, Inc."
+  },
+  {
+    "patent_number": "EP3166179B1",
+    "title": "Antenna apparatus in wireless communication device",
+    "abstract": "An apparatus comprising an antenna (110 510), the apparatus comprising: a board (100, 500) having a stack structure, wherein the board comprises a first layer and a second layer; at least one radiating unit disposed between the first layer and the second layer at least one of a feed unit (115) and …",
+    "publication_date": "2026-01-07",
+    "inventor": "Won-Bin Hong",
+    "assignee": "Samsung Electronics Co., Ltd."
+  },
+  {
+    "patent_number": "US10673135B2",
+    "title": "5G terminal antenna with reconfigurable radiation pattern",
+    "abstract": "An antenna system with a reconfigurable radiation pattern characteristic for the fifth generation (5G) mobile terminal is described, which includes multiple antenna sub-arrays with different radiation patterns and a switch that connects each antenna sub-array and controls switching between …",
+    "publication_date": "2020-06-02",
+    "inventor": "Bin Yu",
+    "assignee": "Speedlink Technology Inc."
+  },
+  {
+    "patent_number": "EP3474372B1",
+    "title": "Antenna for wearable radio system and associated method of making",
+    "abstract": "An antenna (40) comprising: an elongate dielectric strip (50) having opposing top and bottom sides (52, 54); a first conductive pattern defining a first radiating element (44) for a first frequency range on the top side of said elongate dielectric strip (50); a second conductive pattern defining a …",
+    "publication_date": "2023-05-03",
+    "inventor": "Malcom J. Packer",
+    "assignee": "Harris Global Communications, Inc."
+  },
+  {
+    "patent_number": "US20210300238A1",
+    "title": "Method and device for signaling a driverless operating state of a motor vehicle",
+    "abstract": "A method for signaling a driverless operating state of a motor vehicle in which the motor vehicle is able to drive without a driver, and as long as the motor vehicle is operated in the driverless operating state, a ground of an environment of the motor vehicle is illuminated by an illumination …",
+    "publication_date": "2021-09-30",
+    "inventor": "Nico Latsch",
+    "assignee": "Robert Bosch Gmbh"
+  },
+  {
+    "patent_number": "KR102569789B1",
+    "title": "Graphical user interface for display of autonomous vehicle behaviors",
+    "abstract": "Techniques for creating and presenting graphical user interfaces for display of autonomous vehicle behavior are disclosed. This technology involves determining the trajectory of a vehicle operating in a real world environment. A sensor of the vehicle acquires sensor data representing an object in …",
+    "publication_date": "2023-08-23",
+    "inventor": "아이만 알라라오",
+    "assignee": "모셔널 에이디 엘엘씨"
+  },
+  {
+    "patent_number": "AU2020226986B2",
+    "title": "Sensory layout for autonomous vehicles",
+    "abstract": "Disclosed are devices and systems for an optimized sensor layout for an autonomous or semi-autonomous vehicle. In one aspect, the system includes a vehicle capable of semi autonomous or autonomous operation. A plurality of forward-facing cameras is coupled to the vehicle and configured to have a …",
+    "publication_date": "2026-02-19",
+    "inventor": "Lei Nie",
+    "assignee": "Tusimple, Inc."
+  },
+  {
+    "patent_number": "US20180074200A1",
+    "title": "Systems and methods for determining the velocity of lidar points",
+    "abstract": "A processor-implemented method in a vehicle for detecting the motion of lidar points includes: constructing a sequence of voxel grids surrounding the vehicle at each of a plurality of successive time increments wherein the sequence of voxel grids includes a voxel grid for the current time and a …",
+    "publication_date": "2018-03-15",
+    "inventor": "Mark Liu",
+    "assignee": "GM Global Technology Operations LLC"
+  },
+  {
+    "patent_number": "US20230051632A1",
+    "title": "Systems and methods for an autonomous vehicle",
+    "abstract": "A method of operating an autonomous vehicle includes determining, by the autonomous vehicle, whether a target is in an intended maneuver zone around the autonomous vehicle; generating, by the autonomous vehicle, a signal in response to determining that the target is within the intended maneuver …",
+    "publication_date": "2023-02-16",
+    "inventor": "Niranjan Shenoy Bellare",
+    "assignee": "Tusimple, Inc."
+  },
+  {
+    "patent_number": "US10915112B2",
+    "title": "Autonomous vehicle system for blending sensor data",
+    "abstract": "Systems and methods for generating blended sensor-based (LIDAR-based) visualizations are provided. In one example embodiment, a computer implemented method includes obtaining sensor data associated with a surrounding environment of the autonomous vehicle. The sensor data is acquired via a LIDAR …",
+    "publication_date": "2021-02-09",
+    "inventor": "Molly Nix",
+    "assignee": "Uatc, Llc"
+  },
+  {
+    "patent_number": "US20220413102A1",
+    "title": "Lidar systems and methods for vehicle corner mount",
+    "abstract": "A light detection and ranging (LiDAR) scanning system for at least partial integration with a vehicle roof is disclosed. The system comprises one or more optical core assemblies at least partially integrated with the vehicle roof and positioned proximate to one or more pillars of the vehicle roof.",
+    "publication_date": "2022-12-29",
+    "inventor": "Yufeng Li",
+    "assignee": "Innovusion, Inc."
+  },
+  {
+    "patent_number": "WO2023183094A1",
+    "title": "Compact perception device",
+    "abstract": "A compact perception device for an autonomous driving system is disclosed. The compact perception device includes a lens configured to collect both visible light and near infrared (NIR) light to obtain collected light including collected visible light and collected NIR light. The device further …",
+    "publication_date": "2023-09-28",
+    "inventor": "Haosen WANG",
+    "assignee": "Innovusion, Inc."
+  },
+  {
+    "patent_number": "US20240029447A1",
+    "title": "Multi-view deep neural network for lidar perception",
+    "abstract": "A deep neural network(s) (DNN) may be used to detect objects from sensor data of a three dimensional (3D) environment. For example, a multi-view perception DNN may include multiple constituent DNNs or stages chained together that sequentially process different views of the 3D environment. An …",
+    "publication_date": "2024-01-25",
+    "inventor": "Nikolai Smolyanskiy",
+    "assignee": "Nvidia Corporation"
+  },
+  {
+    "patent_number": "JP7756083B2",
+    "title": "Autonomous Vehicle Environment Perception Software Architecture",
+    "abstract": "1. A method of sensing a scene containing an object of interest in an autonomous vehicle environment, comprising: receiving sensor data from a plurality of distinct sensor modalities, each sensor modality observing at least a portion of the scene containing at least one of the objects of interest …",
+    "publication_date": "2025-10-17",
+    "inventor": "ユヴァル ネフマディ",
+    "assignee": "ユヴァル ネフマディ"
+  },
+  {
+    "patent_number": "KR102779560B1",
+    "title": "Adaptive error correction in quantum computing",
+    "abstract": "A computer-readable storage device having stored program instructions for performing adaptive error correction in quantum computing, the stored program instructions comprising: A step of determining a set of parameters of a quantum processor by performing a calibration operation on the quantum …",
+    "publication_date": "2025-03-10",
+    "inventor": "존 건넬스",
+    "assignee": "인터내셔널 비지네스 머신즈 코포레이션"
+  },
+  {
+    "patent_number": "JP7754904B2",
+    "title": "quantum error correction",
+    "abstract": "receiving one or more syndrome measurements from a current round of error detection performed by a quantum error detection circuit in a quantum computer running a quantum algorithm; converting the one or more syndrome measurements into detection events for the current round of error detection, …",
+    "publication_date": "2025-10-15",
+    "inventor": "オースティン・グレイグ・ファウラー",
+    "assignee": "グーグル エルエルシー"
+  },
+  {
+    "patent_number": "JP7514297B2",
+    "title": "Pipelined hardware decoder for quantum computing devices",
+    "abstract": "1. A quantum computing device comprising: at least one quantum register including a plurality of qubits; receiving syndrome data from one or more of the plurality of qubits; and a hardware decoder configured to decode the received syndrome data by implementing a union find decoding algorithm via a …",
+    "publication_date": "2024-07-10",
+    "inventor": "ダス，ポウラミ",
+    "assignee": "マイクロソフト テクノロジー ライセンシング，エルエルシー"
+  },
+  {
+    "patent_number": "US11250341B2",
+    "title": "System, method and computer readable medium for quassical computing",
+    "abstract": "A system comprising a classical computing subsystem to perform classical operations in a three-dimensional (3D) classical space unit using decomposed stopping points along a consecutive sequence of stopping points of sub-cells, along a vector with a shortest path between two points of the 3D …",
+    "publication_date": "2022-02-15",
+    "inventor": "Edward H. Allen",
+    "assignee": "Lockheed Martin Corporation"
+  },
+  {
+    "patent_number": "US12035644B2",
+    "title": "Architectures for quantum information processing",
+    "abstract": "A device for quantum information processing is disclosed herein. According to examples, the device comprises a first plurality of confinement regions for confining spinful charge carriers for use as data qudits. The device further comprises a second plurality of confinement regions for confining …",
+    "publication_date": "2024-07-09",
+    "inventor": "John Morton",
+    "assignee": "Quantum Motion Technologies Limited"
+  },
+  {
+    "patent_number": "EP3883176B1",
+    "title": "Fault-tolerant computation method and apparatus for quantum clifford circuit, …",
+    "abstract": "A fault tolerant computation method for a quantum Clifford circuit, characterized in that the fault tolerant computation method is performed in a hybrid environment including a classical computer and a quantum computer, and comprises: decomposing (301), by the classical computer, a quantum …",
+    "publication_date": "2024-04-17",
+    "inventor": "Yicong ZHENG",
+    "assignee": "Tencent Technology (Shenzhen) Company Limited"
+  },
+  {
+    "patent_number": "US10031791B1",
+    "title": "Systems and methods for quantum computation using random compiling",
+    "abstract": "Systems and methods for executing a quantum computation comprising a plurality gates on a quantum information processor are provided. An initial quantum-logic gate sequence comprising the plurality of gates is received. Then, for each instance in a plurality of instances, a procedure is performed.",
+    "publication_date": "2018-07-24",
+    "inventor": "Joel J. Wallman",
+    "assignee": "Quantum Benchmark, Inc."
+  },
+  {
+    "patent_number": "EP3716161B1",
+    "title": "Apparatus and method for probabilistic error correction of a quantum computing …",
+    "abstract": "An apparatus comprising: a quantum controller (1110) to generate physical pulses directed to qubits on a quantum processor in response to operations specified in a quantum runtime; quantum measurement circuitry (1112) to measure quantum values associated with the qubits following completion of at …",
+    "publication_date": "2025-03-26",
+    "inventor": "Justin Hogaboam",
+    "assignee": "Intel Corporation"
+  },
+  {
+    "patent_number": "US11635642B2",
+    "title": "Reprogrammable quantum processor architecture incorporating quantum error …",
+    "abstract": "A novel and useful quantum computing machine architecture that includes a classic computing core as well as a quantum computing core. A programmable pattern generator executes sequences of instructions that control the quantum core. In accordance with the sequences, a pulse generator functions to …",
+    "publication_date": "2023-04-25",
+    "inventor": "Dirk Robert Walter Leipold",
+    "assignee": "equal1.labs Inc."
+  },
+  {
+    "patent_number": "JP7186891B2",
+    "title": "Quantum error correction decoding method, device, chip, computer equipment, and …",
+    "abstract": "A quantum error correction decoding method based on a neural network, obtaining error syndrome information of a quantum circuit, said error syndrome information being a data array consisting of eigenvalues of a stabilizer generator of a quantum error correcting code; performing block division …",
+    "publication_date": "2022-12-09",
+    "inventor": "一▲聰▼ ▲鄭▼",
+    "assignee": "▲騰▼▲訊▼科技（深▲セン▼）有限公司"
+  },
+  {
+    "patent_number": "JP7761921B2",
+    "title": "lipid nanoparticles",
+    "abstract": "The composition contains a pH-sensitive cationic lipid, a polyalkylene glycol-modified lipid, and a nucleic acid , The content ratio of the pH-sensitive cationic lipid to the total amount of lipids constituting the lipid nanoparticles is 40 to 70 mol%, The content ratio of the polyalkylene glycol- …",
+    "publication_date": "2025-10-29",
+    "inventor": "悠介 佐藤",
+    "assignee": "国立大学法人北海道大学"
+  },
+  {
+    "patent_number": "US20200345641A1",
+    "title": "Lipid nanoparticles",
+    "abstract": "The present invention relates to the field of lipid nanoparticles more specifically comprising an ionisable lipid, a phospholipid, a sterol, a PEG lipid and one or more nucleic acids. The LNP's of the present invention are characterized in having a minimal average diameter of about 140 nm, thereby …",
+    "publication_date": "2020-11-05",
+    "inventor": "Stefaan De Koker",
+    "assignee": "Etherna Immunotherapies Nv"
+  },
+  {
+    "patent_number": "US11458209B2",
+    "title": "Compositions and methods for delivery of nucleic acid-lipid nanoparticle …",
+    "abstract": "The disclosure provides nanoemulsion compositions and methods of making and using thereof to deliver a bioactive agent such as a nucleic acid to a subject. Compositions of the disclosure include nucleic-acid lipid nanoparticle complexes encoding for viral RNA polymerase region and protein antigen.",
+    "publication_date": "2022-10-04",
+    "inventor": "Amit Khandhar",
+    "assignee": "Hdt Bio Corp."
+  },
+  {
+    "patent_number": "WO2025014802A1",
+    "title": "Ionizable and cationic lipid nanoparticles and intracellular drug delivery …",
+    "abstract": "The present invention provides a formulation method for encapsulating a negatively charged or hydrophobic target agent by lipid nanoparticles (LNPs). The formulation method comprises impinging an organic phase solution having an ionizable or cationic lipid and an aqueous phase solution. The target …",
+    "publication_date": "2025-01-16",
+    "inventor": "Sharan Kumar Reddy BOBBALA",
+    "assignee": "West Virginia University Board of Governors on behalf of West Virginia …"
+  },
+  {
+    "patent_number": "KR20250056147A",
+    "title": "Cationic lipid nanoparticles for mRNA vaccine",
+    "abstract": "… , fragility, immunogenicity, and large size. However, the method of delivering siRNA through lipid nanoparticles became possible when it received FDA approval in 2018, and many studies have been conducted on the use of lipid nanoparticles as mRNA vaccine delivery vehicles based on this.",
+    "publication_date": "2025-04-25",
+    "inventor": "박용석",
+    "assignee": "연세대학교 원주산학협력단"
+  },
+  {
+    "patent_number": "KR102465349B1",
+    "title": "Novel Ionizable Lipids and Lipid Nanoparticles Comprising Thereof",
+    "abstract": "The present invention relates to novel ionized lipids and lipid nanoparticles containing the ionized lipids, and a therapeutic agent using the lipid nanoparticles containing a new type of ionized lipid according to the present invention reduces side effects in vivo due to the components of the …",
+    "publication_date": "2022-11-11",
+    "inventor": "이태우",
+    "assignee": "주식회사 테르나테라퓨틱스"
+  },
+  {
+    "patent_number": "CN110974954B",
+    "title": "Lipid nanoparticle for enhancing immune effect of nucleic acid vaccine and …",
+    "abstract": "The invention provides a lipid nanoparticle for enhancing the immune effect of a nucleic acid vaccine and a preparation method thereof, and relates to the technical field of drug carriers. The nucleic acid vaccine comprises, by mole percent, 25-75% of protonatable cationic lipid, 5-20% of anionic …",
+    "publication_date": "2021-03-16",
+    "inventor": "向晟楠",
+    "assignee": "珠海丽凡达生物技术有限公司"
+  },
+  {
+    "patent_number": "US11679163B2",
+    "title": "Compositions and methods for delivery of RNA",
+    "abstract": "This application is a continuation of U.S. patent application Ser. No. 17/839,574, filed Jun. 14, 2022, which is a continuation of U.S. application Ser. No. 17/702,730, filed Mar. 23, 2022, which issued as U.S. Pat. No. 11,433,142 on Sep. 6, 2022, which is a continuation of U.S. application Ser.",
+    "publication_date": "2023-06-20",
+    "inventor": "Amit Khandhar",
+    "assignee": "Hdt Bio Corp."
+  },
+  {
+    "patent_number": "CN121079077A",
+    "title": "Microfluidic device for preparing lipid nanoparticles of various sizes and …",
+    "abstract": "The present invention relates to a microfluidic device for preparing lipid nanoparticles capable of transporting nucleic acids, and a lipid nanoparticle preparation method using the same. By using a microfluidic device, lipid nanoparticles of a desired size can be prepared by adjusting the …",
+    "publication_date": "2025-12-05",
+    "inventor": "全美娟",
+    "assignee": "梅普斯根有限公司"
+  },
+  {
+    "patent_number": "WO2025199580A1",
+    "title": "Microprojection arrays",
+    "abstract": "The present invention relates to formulations, devices and methods for coating surfaces of microprojections on microprojection arrays with nucleic acids. The present invention also relates to formulations and methods for coating surfaces of microprojections with nucleic acids where the nucleic …",
+    "publication_date": "2025-10-02",
+    "inventor": "Paul FAHEY",
+    "assignee": "Vaxxas Pty Limited"
+  },
+  {
+    "patent_number": "US11942620B2",
+    "title": "Solid state battery with uniformly distributed electrolyte, and methods of …",
+    "abstract": "The present disclosure relates to a solid-state electrochemical cell having a uniformly distributed solid-state electrolyte and methods of fabrication relating thereto. The method may include forming a plurality of apertures within the one or more solid-state electrodes; impregnating the one or …",
+    "publication_date": "2024-03-26",
+    "inventor": "Yong Lu",
+    "assignee": "GM Global Technology Operations LLC"
+  },
+  {
+    "patent_number": "US11239459B2",
+    "title": "Low-expansion composite electrodes for all-solid-state batteries",
+    "abstract": "A composite electrode for use in an all-solid-state electrochemical cell that cycles lithium ions is provided. The composite electrode comprises a solid-state electroactive material that undergoes volumetric expansion and contraction during cycling of the electrochemical cell and a solid-state …",
+    "publication_date": "2022-02-01",
+    "inventor": "Thomas A. Yersak",
+    "assignee": "GM Global Technology Operations LLC"
+  },
+  {
+    "patent_number": "ES2792053T3",
+    "title": "Advanced graphite additive to improve the life cycle of deep discharge lead …",
+    "abstract": "A deep discharge lead acid cell for motive power batteries, comprising: a first electrode comprising lead; a second electrode comprising lead dioxide, wherein at least one of said first and second electrodes is configured with a thickness between about 3.81 and 6.35 mm (0.15 and 0.25 inches); a …",
+    "publication_date": "2020-11-06",
+    "inventor": "Sudhakar Jagannathan",
+    "assignee": "Exide Tech"
+  },
+  {
+    "patent_number": "US20260081167A1",
+    "title": "… Manufacturing Electrode of All-Solid State Battery and Electrode of All-Solid …",
+    "abstract": "An amount of the solid electrolyte contained in the secondary slurry may be 5 weight % to 10 weight % based on the total solid content. The present invention provides an electrode of an all-solid-state battery manufactured by the method of manufacturing the electrode of the all-solid-state battery. …",
+    "publication_date": "2026-03-19",
+    "inventor": "Suk Woo Lee",
+    "assignee": "Lg Energy Solution, Ltd."
+  },
+  {
+    "patent_number": "US11295901B2",
+    "title": "Hybrid electrode materials for bipolar capacitor-assisted solid-state batteries",
+    "abstract": "A bipolar capacitor-assisted solid-state battery is disclosed that includes a plurality of electrochemical battery unit cells, each of which includes a negative electrode, a positive electrode, and a lithium ion-conductive electrolyte-containing separator disposed between the negative electrode …",
+    "publication_date": "2022-04-05",
+    "inventor": "Mengyan Hou",
+    "assignee": "GM Global Technology Operations LLC"
+  },
+  {
+    "patent_number": "US9419303B2",
+    "title": "Electric vehicle propulsion system and method utilizing solid-state …",
+    "abstract": "A vehicle propulsion system comprising a plurality of solid state rechargeable battery cells configured to power a drivetrain. In accordance with once aspect of the invention, a transportation system that is powered at least in part by electricity stored in the form of rechargeable electrochemical …",
+    "publication_date": "2016-08-16",
+    "inventor": "Ann Marie Sastry",
+    "assignee": "Sakti3, Inc."
+  },
+  {
+    "patent_number": "CN220172186U",
+    "title": "Electrode components, battery cells, batteries and electrical equipment",
+    "abstract": "Embodiments of the present application provide an electrode assembly, a battery cell, a battery and electrical equipment. The electrode assembly has a wound structure. The electrode assembly includes a first pole piece. The first pole piece includes a plurality of first pole tabs. The plurality of …",
+    "publication_date": "2023-12-12",
+    "inventor": "林文法",
+    "assignee": "宁德时代新能源科技股份有限公司"
+  },
+  {
+    "patent_number": "CN118800950A",
+    "title": "Battery monomer and preparation method thereof, battery and electrical …",
+    "abstract": "The present application relates to the technical field of secondary batteries, and in particular to battery cells and methods for preparing the same, batteries and electrical equipment. The battery cell includes a shell, an electrolyte and a polymer composite layer, the polymer composite layer is …",
+    "publication_date": "2024-10-18",
+    "inventor": "石鹏",
+    "assignee": "宁德时代新能源科技股份有限公司"
+  },
+  {
+    "patent_number": "CN220774471U",
+    "title": "Battery monomer, battery and power utilization device",
+    "abstract": "The present application discloses a battery cell, a battery and an electric device. The battery cell includes a shell and an electrode assembly, the shell is used to accommodate the electrode assembly, the electrode assembly includes a first pole piece, a second pole piece, a first diaphragm, a …",
+    "publication_date": "2024-04-12",
+    "inventor": "刘转",
+    "assignee": "宁德时代新能源科技股份有限公司"
+  },
+  {
+    "patent_number": "CN115298876A",
+    "title": "Nonaqueous electrolyte secondary battery",
+    "abstract": "The non-aqueous electrolyte secondary battery includes an electrode body including a positive electrode plate and a negative electrode plate, a rectangular exterior body having an opening and accommodating the electrode body, a sealing plate closing the opening, and electrode terminals provided on …",
+    "publication_date": "2022-11-04",
+    "inventor": "太田雅人",
+    "assignee": "三洋电机株式会社"
+  },
+  {
+    "patent_number": "US12340792B2",
+    "title": "Systems and methods for few-shot intent classifier models",
+    "abstract": "Some embodiments of the current disclosure disclose methods and systems for training for training a natural language processing intent classification model to perform few-shot classification tasks. In some embodiments, a pair of an utterance and a first semantic label labeling the utterance may be …",
+    "publication_date": "2025-06-24",
+    "inventor": "Jin Qu",
+    "assignee": "Salesforce, Inc."
+  },
+  {
+    "patent_number": "CN118471533A",
+    "title": "A method of psychiatric knowledge question and answer, auxiliary scale …",
+    "abstract": "The present invention discloses a method for psychiatric knowledge question and answer, auxiliary scale evaluation and pre-diagnosis, including a method for medical natural language processing, a device used by the method for medical natural language processing, and a medical natural language …",
+    "publication_date": "2024-08-09",
+    "inventor": "袁泽",
+    "assignee": "袁泽"
+  },
+  {
+    "patent_number": "CN120045765A",
+    "title": "Crawler content extraction method based on machine learning large model",
+    "abstract": "The present application relates to the field of machine learning, and provides a crawler content extraction method based on a machine learning big model, the method comprising: obtaining a uniform resource locator URL from a content queue, using a natural language processing Transformer model to …",
+    "publication_date": "2025-05-27",
+    "inventor": "赵金江",
+    "assignee": "上证所信息网络有限公司"
+  },
+  {
+    "patent_number": "CN113886562A",
+    "title": "An AI resume screening method, system, device and storage medium",
+    "abstract": "The invention discloses an AI resume screening method, which comprises the following steps: inputting the plain text content of all resumes into an improved BERT model; the BERT model adopts a multi-layer Transformer architecture; arranging a teacher classifier behind the transform stack;",
+    "publication_date": "2022-01-04",
+    "inventor": "孙红升",
+    "assignee": "智联(无锡)信息技术有限公司"
+  },
+  {
+    "patent_number": "CN111708882B",
+    "title": "Transformer-based Chinese text information missing completion method",
+    "abstract": "The invention discloses a method for complementing missing Chinese text information based on a Transformer encoder, manual preprocessing of public corpus of Chinese text to be processed, identifying periods by a computer, and dividing the text into a large number of short sentence corpora divided …",
+    "publication_date": "2022-09-30",
+    "inventor": "黑新宏",
+    "assignee": "西安理工大学"
+  },
+  {
+    "patent_number": "US11915701B2",
+    "title": "Automatic summarization of financial earnings call transcripts",
+    "abstract": "Computer-readable media, systems and methods may improve automatic summarization of transcripts of financial earnings calls. For example, a system may generate segments, such as by disambiguating sentences, from a transcript to be summarized. The system may use an estimator that assesses whether …",
+    "publication_date": "2024-02-27",
+    "inventor": "Jochen Lothar Leidner",
+    "assignee": "Refinitiv Us Organization Llc"
+  },
+  {
+    "patent_number": "US12299579B2",
+    "title": "Adversarial pretraining of machine learning models",
+    "abstract": "This document relates to training of machine learning models. One example method involves providing a machine learning model having one or more mapping layers. The one or more mapping layers can include at least a first mapping layer configured to map components of pretraining examples into first …",
+    "publication_date": "2025-05-13",
+    "inventor": "Xiaodong Liu",
+    "assignee": "Microsoft Technology Licensing, Llc"
+  },
+  {
+    "patent_number": "US20240346295A1",
+    "title": "Multi-task machine learning architectures and training procedures",
+    "abstract": "BACKGROUND One approach to machine learning is to define a model structure that is suited for a particular task, and then train the model structure using labeled training data appropriate for that task. For example, a convolutional neural network can be constructed for detecting faces in images.",
+    "publication_date": "2024-10-17",
+    "inventor": "Weizhu Chen",
+    "assignee": "Microsoft Technology Licensing, Llc"
+  },
+  {
+    "patent_number": "US20210183484A1",
+    "title": "Hierarchical cnn-transformer based machine learning",
+    "abstract": "Clinical prediction models often use structured variables and provide outcomes that are not readily interpretable by clinicians. Further, text medical notes may contain information not immediately available in structured variables. Applicants propose a hierarchical CNN-Transformer model with an …",
+    "publication_date": "2021-06-17",
+    "inventor": "Chantal SHAIB",
+    "assignee": "Surgical Safety Technologies Inc."
+  },
+  {
+    "patent_number": "US12361740B2",
+    "title": "Domain-specific processing and information management using machine learning …",
+    "abstract": "Systems and techniques are provided for automatically analyzing and processing domain-specific image artifacts and document images. A process can include obtaining a plurality of document images comprising visual representations of structured text. An OCR-free machine learning model can be trained …",
+    "publication_date": "2025-07-15",
+    "inventor": "Deepak Ramaswamy",
+    "assignee": "32Health Inc."
+  },
+  {
+    "patent_number": "CN114063474B",
+    "title": "A Simulation Method of Semi-Physical Simulation System Based on UAV Swarm",
+    "abstract": "The invention relates to a simulation method of a semi-physical simulation system based on a UAV cluster. The semi-physical simulation system includes: the cluster ground station computer interacts with the semi-physical simulation UAV cluster for control instructions; each unmanned drone in the …",
+    "publication_date": "2023-06-06",
+    "inventor": "李大伟",
+    "assignee": "北京航空航天大学"
+  },
+  {
+    "patent_number": "CN113268076B",
+    "title": "Multi-unmanned aerial vehicle cluster formation cooperative control algorithm",
+    "abstract": "The invention discloses a multi-unmanned aerial vehicle swarm formation cooperative control algorithm. In the case of a single swarm with a small UAV swarm scale, the algorithm comprehensively considers segmental trajectory planning, UAV motion control and network topology optimization, etc., and …",
+    "publication_date": "2022-10-04",
+    "inventor": "雷磊",
+    "assignee": "南京航空航天大学"
+  },
+  {
+    "patent_number": "CN110703795B",
+    "title": "A cooperative security control method for UAV swarms based on switching …",
+    "abstract": "The invention discloses a method for cooperative safety control of unmanned aerial vehicle swarms based on switching topology. The second-order dynamic equations of the UAV leader and UAV follower in the switching subsystem are established respectively; a safety controller that considers both …",
+    "publication_date": "2020-09-15",
+    "inventor": "陈谋",
+    "assignee": "南京航空航天大学"
+  },
+  {
+    "patent_number": "CN112270488B",
+    "title": "Unmanned aerial vehicle cluster task allocation method and device and unmanned …",
+    "abstract": "The invention provides an unmanned aerial vehicle cluster task allocation method and device and an unmanned aerial vehicle cluster system, and relates to the technical field of unmanned aerial vehicles. Acquiring task data to be distributed and capability statement data of a plurality of task …",
+    "publication_date": "2023-12-12",
+    "inventor": "王文峰",
+    "assignee": "中国电子技术标准化研究院"
+  },
+  {
+    "patent_number": "CN112269396B",
+    "title": "Unmanned aerial vehicle cluster cooperative confrontation control method for …",
+    "abstract": "The present invention is a cooperative confrontation control method of drone swarm imitating eagle-dove intelligent game, comprising the following implementation steps: step 1: initialize battlefield environment settings; step 2: drone swarm confrontation motion control; step 3: based on eagle- …",
+    "publication_date": "2021-09-28",
+    "inventor": "段海滨",
+    "assignee": "北京航空航天大学"
+  },
+  {
+    "patent_number": "CN113311859B",
+    "title": "Finite-time affine formation flight control method for unmanned aerial vehicle …",
+    "abstract": "The invention discloses a limited-time affine formation flight control method for an unmanned aerial vehicle swarm: determining the nominal formation configuration of the unmanned aerial vehicle swarm, selecting a pilot unmanned aerial vehicle according to the nominal formation configuration of …",
+    "publication_date": "2022-05-10",
+    "inventor": "段海滨",
+    "assignee": "北京航空航天大学"
+  },
+  {
+    "patent_number": "CN113741518B",
+    "title": "Affine formation control method for fixed-wing UAV swarm based on leader- …",
+    "abstract": "The present invention discloses a fixed-wing UAV cluster affine formation control method based on a pilot-follower mode, and the steps include: S1. Based on the pilot-follower mode, determine the leader and the follower in the fixed-wing UAV formation, determine the configuration of the nominal …",
+    "publication_date": "2024-05-31",
+    "inventor": "王祥科",
+    "assignee": "中国人民解放军国防科技大学"
+  },
+  {
+    "patent_number": "CN119248009B",
+    "title": "UAV swarm control and navigation method based on MAPPO",
+    "abstract": "The invention discloses a MAPPO-based unmanned aerial vehicle cluster control and navigation method which comprises the steps of extracting unmanned aerial vehicle basic feature data, calculating unmanned aerial vehicle comprehensive capacity indexes through dynamic characteristic analysis and …",
+    "publication_date": "2025-02-25",
+    "inventor": "汤月龙",
+    "assignee": "中科南京人工智能创新研究院"
+  },
+  {
+    "patent_number": "CN111665848B",
+    "title": "Formation tracking control method for heterogeneous swarms of unmanned aerial …",
+    "abstract": "The invention discloses a heterogeneous cluster formation tracking control method for unmanned aerial vehicles and unmanned vehicles under topological switching. The tracking control method is used for constructing a virtual leader of the heterogeneous formation; constructing a time-varying …",
+    "publication_date": "2020-12-11",
+    "inventor": "董希旺",
+    "assignee": "北京航空航天大学"
+  },
+  {
+    "patent_number": "CN114201925B",
+    "title": "Unmanned aerial vehicle cluster cooperative task planning method, electronic …",
+    "abstract": "The present application provides a collaborative task planning method, electronic device and readable storage medium for a swarm of unmanned aerial vehicles, and relates to the technical field of unmanned aerial vehicles. The optimal route for the base to reach the target point; the target task …",
+    "publication_date": "2022-06-17",
+    "inventor": "邢立宁",
+    "assignee": "佛山科学技术学院"
+  },
+  {
+    "patent_number": "US7824959B2",
+    "title": "Wafer level stack structure for system-in-package and method thereof",
+    "abstract": "A method of forming a wafer level stack structure, including forming a first wafer including a first device chip, wherein the first device chip includes a plurality of input/output (I/O) pads, forming a second wafer including a second device chip, wherein each second device chip contains a second …",
+    "publication_date": "2010-11-02",
+    "inventor": "Kang-Wook Lee",
+    "assignee": "Samsung Electronics Co., Ltd."
+  },
+  {
+    "patent_number": "US8063475B2",
+    "title": "Semiconductor package system with through silicon via interposer",
+    "abstract": "A semiconductor package system includes: providing a top package, a through silicon via interposer embedded in the top package; providing a bottom package having a bottom semiconductor die with a top connection adjacent the center active face thereof, a substrate interposer being embedded in the …",
+    "publication_date": "2011-11-22",
+    "inventor": "Daesik Choi",
+    "assignee": "Stats Chippac Ltd."
+  },
+  {
+    "patent_number": "WO2017160231A1",
+    "title": "Semiconductor package and method of forming the same",
+    "abstract": "Various embodiments may provide a semiconductor package. The semiconductor package may include a redistribution layer, a plurality of solder balls on a first side of the redistribution layer, a first semiconductor die over a second side of the redistribution layer opposite the first side, one or …",
+    "publication_date": "2017-09-21",
+    "inventor": "David Ho",
+    "assignee": "Agency For Science, Technology And Research"
+  },
+  {
+    "patent_number": "TWI868490B",
+    "title": "Semiconductor package",
+    "abstract": "A semiconductor package includes a bottom package having a substrate and a semiconductor die mounted on a top surface of the substrate. The semiconductor die has an active surface and a rear surface coupled to the top surface of the substrate. The semiconductor die comprises through silicon vias.",
+    "publication_date": "2025-01-01",
+    "inventor": "楊亞倫",
+    "assignee": "聯發科技股份有限公司"
+  },
+  {
+    "patent_number": "KR20240004060A",
+    "title": "Semiconductor Package",
+    "abstract": "A semiconductor package includes: a first semiconductor chip including a TSV with an upper conductive pad connected with the TSV and disposed on the upper surface thereof; a second semiconductor chip located on the first semiconductor chip, and having a lower conductive pad disposed on the lower …",
+    "publication_date": "2024-01-11",
+    "inventor": "장원중",
+    "assignee": "삼성전자주식회사"
+  },
+  {
+    "patent_number": "US7863100B2",
+    "title": "Integrated circuit packaging system with layered packaging and method of …",
+    "abstract": "A method of manufacture of an integrated circuit packaging system includes: forming a base package having a base interposer; forming an intermediate package having an intermediate interposer and an intermediate package embedded link trace, the intermediate package embedded link trace being …",
+    "publication_date": "2011-01-04",
+    "inventor": "Joungln Yang",
+    "assignee": "Stats Chippac Ltd."
+  },
+  {
+    "patent_number": "US11462495B2",
+    "title": "Chiplets 3D SoIC system integration and fabrication methods",
+    "abstract": "A method includes forming integrated circuits on a front side of a first chip, performing a backside grinding on the first chip to reveal a plurality of through-vias in the first chip, and forming a first bridge structure on a backside of the first chip using a damascene process. The bridge …",
+    "publication_date": "2022-10-04",
+    "inventor": "Chen-Hua Yu",
+    "assignee": "Taiwan Semiconductor Manufacturing Co., Ltd."
+  },
+  {
+    "patent_number": "US9412678B2",
+    "title": "Structure and method for 3D IC package",
+    "abstract": "A chip package may include: a first die; a second die; an underfill disposed between and in physical contact with the first die and the second die; and one or more conductive elements encapsulated in the underfill and coupling the first die and the second die to each other.",
+    "publication_date": "2016-08-09",
+    "inventor": "Shang-Yun Hou",
+    "assignee": "Taiwan Semiconductor Manufacturing Company, Ltd."
+  },
+  {
+    "patent_number": "US8164172B2",
+    "title": "Integrated circuit package in package system",
+    "abstract": "An integrated circuit package in package system includes: a base integrated circuit package with a base lead substantially coplanar with a base die paddle and having a portion with a substantially planar base surface; an extended-lead integrated circuit package with an extended lead having a …",
+    "publication_date": "2012-04-24",
+    "inventor": "Tsz Yin HO",
+    "assignee": "Stats Chippac Ltd."
+  },
+  {
+    "patent_number": "US9337063B2",
+    "title": "Package for three dimensional integrated circuit",
+    "abstract": "A wafer level package includes a semiconductor die bonded on a supporting wafer. The semiconductor die has at least a step recess at its substrate. An underfill layer is formed between the semiconductor die and the supporting wafer. Moreover, the height of the underfill layer is limited by the …",
+    "publication_date": "2016-05-10",
+    "inventor": "Chih-hao Chen",
+    "assignee": "Taiwan Semiconductor Manufacturing Company, Ltd."
+  }
+]
