@@ -55,7 +55,7 @@ if not exist "%~dp0backend\.env" (
     echo   Get one at: https://serpapi.com
     echo ============================================
     set /p KEY="Key (Enter to skip): "
-    powershell -NoProfile -Command "(Get-Content '%~dp0backend\.env') -replace 'SERPAPI_KEY=.+', 'SERPAPI_KEY=!KEY!' | Set-Content '%~dp0backend\.env'"
+    call :writekey
 )
 
 :: Python deps
@@ -117,3 +117,11 @@ pause >nul
 
 taskkill /FI "WINDOWTITLE eq Backend" /F >nul 2>&1
 taskkill /FI "WINDOWTITLE eq Frontend" /F >nul 2>&1
+exit /b
+
+:writekey
+if not "%KEY%"=="" (
+    powershell -NoProfile -Command "(Get-Content '%~dp0backend\.env') -replace 'SERPAPI_KEY=.+', 'SERPAPI_KEY=%KEY%' | Set-Content '%~dp0backend\.env'"
+    echo   Key saved.
+)
+exit /b

@@ -133,28 +133,20 @@ class GooglePatentsProvider:
             return []
 
     async def get_patent_detail(self, patent_number: str) -> dict | None:
-        """Fetch detailed patent information."""
+        """Fetch detailed patent information from Google Patents HTML page."""
         try:
             async with httpx.AsyncClient(timeout=30) as client:
                 url = f"https://patents.google.com/patent/{patent_number}/en"
                 headers = {
                     "User-Agent": "Mozilla/5.0 (compatible; PatentSearch/1.0)",
-                    "Accept": "text/html,application/json",
+                    "Accept": "text/html",
                 }
-                # Try JSON API first
-                api_url = f"https://patents.google.com/patent/{patent_number}/en?format=json"
-                resp = await client.get(api_url, headers=headers)
-                if resp.status_code == 200:
-                    data = resp.json()
-                    return self._parse_patent_json(data, patent_number)
-
-                # Fallback to HTML
                 resp = await client.get(url, headers=headers)
-                if resp.status_code == 200:
-                    return self._parse_patent_html(resp.text, patent_number)
+                if resp.status_code != 200:
+                    return None
+                return self._parse_patent_html(resp.text, patent_number)
         except Exception:
-            pass
-        return None
+            return None
 
     def _parse_patent_json(self, data: dict, pn: str) -> dict:
         try:
@@ -179,12 +171,41 @@ class GooglePatentsProvider:
     def _parse_patent_html(self, html: str, pn: str) -> dict:
         import re
 
-        title_match = re.search(r'<title>(.*?)</title>', html)
-        title = title_match.group(1) if title_match else pn
+        # Title from <title> tag
+        title_match = re.search(r'<title[^>]*>(.*?)</title>', html, re.DOTALL)
+        title = ""
+        if title_match:
+            title = re.sub(r"<[^>]+>", "", title_match.group(1)).strip()
+            title = title.replace(" - Google Patents", "").strip()
+
+        # Abstract from meta or patent-text
+        abstract = ""
+        abstract_match = re.search(r'<meta[^>]*name="description"[^>]*content="([^"]+)"', html)
+        if abstract_match:
+            abstract = abstract_match.group(1)[:500]
+        else:
+            # Try to find first paragraph of patent text
+            text_match = re.search(r'<section[^>]*itemprop="abstract"[^>]*>(.*?)</section>', html, re.DOTALL)
+            if text_match:
+                abstract = re.sub(r"<[^>]+>", " ", text_match.group(1)).strip()[:500]
+
+        # Assignee
+        assignee_match = re.search(r'<dd[^>]*itemprop="assignee"[^>]*>(.*?)</dd>', html, re.DOTALL)
+        applicants = []
+        if assignee_match:
+            applicants = [re.sub(r"<[^>]+>", "", assignee_match.group(1)).strip()]
+
+        # Publication date
+        date_match = re.search(r'<time[^>]*itemprop="publicationDate"[^>]*datetime="([^"]+)"', html)
+        pub_date = date_match.group(1) if date_match else ""
+
         return {
             "patent_number": pn,
-            "title": title[:300],
-            "abstract": "",
+            "title": title[:300] if title else pn,
+            "abstract": abstract[:1000],
+            "ipc_codes": [],
+            "applicants": applicants,
+            "publication_date": pub_date,
             "google_url": f"https://patents.google.com/patent/{pn}/en",
             "espacenet_url": f"https://worldwide.espacenet.com/patent/search?q=pn%3D{pn}",
         }

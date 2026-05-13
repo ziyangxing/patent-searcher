@@ -1,5 +1,7 @@
+import re
+import httpx
 from fastapi import APIRouter, HTTPException
-from fastapi.responses import StreamingResponse
+from fastapi.responses import StreamingResponse, Response
 from app.schemas.patent import (
     ParsedPatentResponse,
     PatentNumberInfo,
@@ -8,6 +10,7 @@ from app.schemas.patent import (
 )
 from app.services.patent_parser import parse_patent_number
 from app.services.epo_client import epo_client
+from app.search.patent_provider import google_patents
 
 router = APIRouter()
 
@@ -30,21 +33,68 @@ async def get_patent_by_number(patent_number: str):
     if not parsed.is_valid:
         return ParsedPatentResponse(patent_number_info=info, detail=None, family=None)
 
-    # Try EPO OPS API
-    biblio_data = await epo_client.get_patent_biblio(parsed.raw)
-    family_data = await epo_client.get_patent_family(parsed.raw)
-
+    # Try Google Patents first (no API key needed)
     detail = None
-    if biblio_data:
-        detail = _parse_epo_biblio(biblio_data, parsed.raw)
+    try:
+        gp_data = await google_patents.get_patent_detail(parsed.raw)
+        if gp_data:
+            detail = PatentDetail(
+                id=0,
+                patent_number=gp_data.get("patent_number", parsed.raw),
+                title=gp_data.get("title", ""),
+                abstract=gp_data.get("abstract", ""),
+                ipc_codes=gp_data.get("ipc_codes"),
+                applicants=gp_data.get("applicants"),
+                inventors=gp_data.get("inventors"),
+                publication_date=gp_data.get("publication_date"),
+                source="google_patents",
+            )
+    except Exception:
+        pass
+
+    # Try EPO OPS API as fallback
+    if not detail:
+        biblio_data = await epo_client.get_patent_biblio(parsed.raw)
+        if biblio_data:
+            detail = _parse_epo_biblio(biblio_data, parsed.raw)
 
     family = None
+    family_data = await epo_client.get_patent_family(parsed.raw)
     if family_data:
         family = _parse_epo_family(family_data)
 
     return ParsedPatentResponse(
         patent_number_info=info, detail=detail, family=family
     )
+
+
+@router.get("/{patent_number}/download")
+async def download_patent_pdf(patent_number: str):
+    """Download patent PDF from Google Patents."""
+    pn = patent_number.strip().upper()
+    headers = {"User-Agent": "Mozilla/5.0"}
+
+    async with httpx.AsyncClient(timeout=60, follow_redirects=True) as client:
+        # Get patent page to find PDF URL
+        resp = await client.get(f"https://patents.google.com/patent/{pn}/en", headers=headers)
+        pdf_urls = re.findall(
+            r"https://patentimages\.storage\.googleapis\.com/[^\"'\s]+\.pdf",
+            resp.text,
+        )
+
+        if not pdf_urls:
+            raise HTTPException(status_code=404, detail="PDF not available for this patent")
+
+        # Download PDF
+        pdf_resp = await client.get(pdf_urls[0], headers=headers)
+        if pdf_resp.status_code != 200:
+            raise HTTPException(status_code=404, detail="Failed to download PDF")
+
+        return Response(
+            content=pdf_resp.content,
+            media_type="application/pdf",
+            headers={"Content-Disposition": f"attachment; filename={pn}.pdf"},
+        )
 
 
 @router.post("/batch")

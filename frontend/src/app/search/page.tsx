@@ -6,7 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useSearchStore, PatentResult } from "@/store/searchStore";
 import { useState, useRef, useCallback } from "react";
-import { apiPost } from "@/lib/api";
+import { apiPost, getApiUrl } from "@/lib/api";
 
 interface SearchPlan {
   technical_field: string;
@@ -195,16 +195,12 @@ export default function SearchPage() {
                           Google Patents ↗
                         </a>
                       )}
-                      {r.espacenet_url && (
-                        <a
-                          href={r.espacenet_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs text-blue-600 hover:underline"
-                        >
-                          Espacenet ↗
-                        </a>
-                      )}
+                      <a
+                        href={getApiUrl(`/patent/${encodeURIComponent(r.patent_number)}/download`)}
+                        className="text-xs text-green-600 hover:underline font-medium"
+                      >
+                        Download PDF ↓
+                      </a>
                       <a
                         href={`/patent/${encodeURIComponent(r.patent_number)}`}
                         className="text-xs text-blue-600 hover:underline"
