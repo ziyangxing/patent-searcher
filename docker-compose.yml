@@ -55,7 +55,7 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "8000:8000"
+      - "8766:8766"
     environment:
       - DATABASE_URL=postgresql+asyncpg://patent:patent123@postgres:5432/patent_search
       - ES_HOST=http://elasticsearch:9200
@@ -73,7 +73,7 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+    command: uvicorn app.main:app --host 0.0.0.0 --port 8766 --reload
 
   # Frontend
   frontend:
@@ -83,7 +83,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      - NEXT_PUBLIC_API_URL=http://localhost:8000/api
+      - NEXT_PUBLIC_API_URL=http://localhost:8766/api
     volumes:
       - ./frontend:/app
       - /app/node_modules

@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useParams } from "next/navigation";
 import { useState, useRef, useCallback } from "react";
+import { createSSERequest } from "@/lib/api";
 
 export default function PatentDetailPage() {
   const { number } = useParams<{ number: string }>();
@@ -22,68 +23,32 @@ export default function PatentDetailPage() {
     setMessages((prev) => [...prev, { role: "user", text: question }]);
     setLoading(true);
 
-    abortRef.current = new AbortController();
+    let aiText = "";
+    setMessages((prev) => [...prev, { role: "ai", text: "" }]);
 
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api"}/chat/patent/${encodeURIComponent(number)}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: question }),
-          signal: abortRef.current.signal,
+    abortRef.current = createSSERequest(
+      `/chat/patent/${encodeURIComponent(number)}`,
+      { message: question },
+      (event, data) => {
+        if (event === "patent_loaded") {
+          setPatentInfo(data as Record<string, string>);
+        } else if (event === "answer_chunk" && (data as { text: string }).text) {
+          aiText += (data as { text: string }).text;
+          setMessages((prev) => {
+            const copy = [...prev];
+            copy[copy.length - 1] = { role: "ai", text: aiText };
+            return copy;
+          });
         }
-      );
-
-      const reader = res.body?.getReader();
-      if (!reader) throw new Error("No response body");
-      const decoder = new TextDecoder();
-      let buffer = "";
-      let aiText = "";
-
-      setMessages((prev) => [...prev, { role: "ai", text: "" }]);
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n");
-        buffer = lines.pop() || "";
-
-        let eventType = "";
-        for (const line of lines) {
-          if (line.startsWith("event: ")) {
-            eventType = line.slice(7).trim();
-          } else if (line.startsWith("data: ") && eventType) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              if (eventType === "patent_loaded") {
-                setPatentInfo(data);
-              } else if (eventType === "answer_chunk" && data.text) {
-                aiText += data.text;
-                setMessages((prev) => {
-                  const copy = [...prev];
-                  copy[copy.length - 1] = { role: "ai", text: aiText };
-                  return copy;
-                });
-              }
-            } catch {
-              // skip parse errors
-            }
-            eventType = "";
-          }
-        }
-      }
-    } catch (err) {
-      if ((err as Error).name !== "AbortError") {
+      },
+      () => {
         setMessages((prev) => [
           ...prev,
-          { role: "ai", text: "Sorry, failed to get a response. Please try again." },
+          { role: "ai", text: "请求失败，请确认后端已启动" },
         ]);
-      }
-    } finally {
-      setLoading(false);
-    }
+      },
+      () => setLoading(false)
+    );
   }, [input, number]);
 
   return (

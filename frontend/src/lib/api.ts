@@ -1,4 +1,8 @@
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8766/api";
+
+export function getApiUrl(path: string): string {
+  return `${API_BASE}${path}`;
+}
 
 export async function apiFetch<T>(
   path: string,
@@ -15,11 +19,19 @@ export async function apiFetch<T>(
   return res.json();
 }
 
+export async function apiPost<T>(path: string, body: unknown): Promise<T> {
+  return apiFetch<T>(path, {
+    method: "POST",
+    body: JSON.stringify(body),
+  });
+}
+
 export function createSSERequest(
   path: string,
   body: unknown,
-  onEvent: (event: string, data: string) => void,
-  onDone: () => void
+  onEvent: (event: string, data: Record<string, unknown>) => void,
+  onError?: (err: Error) => void,
+  onDone?: () => void
 ): AbortController {
   const controller = new AbortController();
 
@@ -30,30 +42,43 @@ export function createSSERequest(
     signal: controller.signal,
   })
     .then(async (res) => {
+      if (!res.ok) {
+        throw new Error(`HTTP ${res.status}: ${res.statusText}`);
+      }
       const reader = res.body?.getReader();
       if (!reader) throw new Error("No response body");
       const decoder = new TextDecoder();
       let buffer = "";
+      let currentEvent = "";
+
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
         buffer += decoder.decode(value, { stream: true });
         const lines = buffer.split("\n");
         buffer = lines.pop() || "";
+
         for (const line of lines) {
-          if (line.startsWith("event: ")) {
-            const eventType = line.slice(7).trim();
-            const dataLine = lines[lines.indexOf(line) + 1];
-            if (dataLine?.startsWith("data: ")) {
-              onEvent(eventType, dataLine.slice(6));
+          const trimmed = line.trim();
+          if (trimmed.startsWith("event: ")) {
+            currentEvent = trimmed.slice(7);
+          } else if (trimmed.startsWith("data: ") && currentEvent) {
+            try {
+              const data = JSON.parse(trimmed.slice(6));
+              onEvent(currentEvent, data);
+            } catch {
+              // skip invalid JSON
             }
+            currentEvent = "";
           }
         }
       }
-      onDone();
+      onDone?.();
     })
     .catch((err) => {
-      if (err.name !== "AbortError") console.error("SSE error:", err);
+      if (err.name !== "AbortError") {
+        onError?.(err);
+      }
     });
 
   return controller;

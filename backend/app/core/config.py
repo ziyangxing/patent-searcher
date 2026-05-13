@@ -5,7 +5,7 @@ class Settings(BaseSettings):
     # Application
     APP_NAME: str = "Patent Searcher"
     DEBUG: bool = False
-    CORS_ORIGINS: list[str] = ["http://localhost:3000", "http://127.0.0.1:3000"]
+    CORS_ORIGINS: list[str] = ["*"]
 
     # Database
     DATABASE_URL: str = "postgresql+asyncpg://patent:patent123@localhost:5432/patent_search"

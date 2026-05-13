@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { useCallback, useState, useRef } from "react";
 import { useDropzone } from "react-dropzone";
+import { createSSERequest, getApiUrl } from "@/lib/api";
 
 interface PatentFeatures {
   title: string;
@@ -61,10 +62,7 @@ export default function UploadPage() {
       const formData = new FormData();
       formData.append("file", f);
       try {
-        const res = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api"}/upload/patent`,
-          { method: "POST", body: formData }
-        );
+        const res = await fetch(getApiUrl("/upload/patent"), { method: "POST", body: formData });
         const data = await res.json();
         setFileText(data.extracted_text || "");
       } catch {
@@ -92,53 +90,13 @@ export default function UploadPage() {
     setSummary("");
     setFoundCount(0);
 
-    abortRef.current = new AbortController();
-
-    try {
-      const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api"}/search/similar/stream`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ text: fileText, top_k: 10 }),
-          signal: abortRef.current.signal,
-        }
-      );
-
-      const reader = res.body?.getReader();
-      if (!reader) throw new Error("No response body");
-      const decoder = new TextDecoder();
-      let buffer = "";
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n");
-        buffer = lines.pop() || "";
-
-        let eventType = "";
-        for (const line of lines) {
-          if (line.startsWith("event: ")) {
-            eventType = line.slice(7).trim();
-          } else if (line.startsWith("data: ") && eventType) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              handleEvent(eventType, data);
-            } catch {
-              // skip parse errors
-            }
-            eventType = "";
-          }
-        }
-      }
-    } catch (err) {
-      if ((err as Error).name !== "AbortError") {
-        setStep("分析失败，请重试");
-      }
-    } finally {
-      setLoading(false);
-    }
+    abortRef.current = createSSERequest(
+      "/search/similar/stream",
+      { text: fileText, top_k: 10 },
+      handleEvent,
+      () => setStep("分析失败，请重试"),
+      () => setLoading(false)
+    );
   }, [fileText]);
 
   function handleEvent(event: string, data: Record<string, unknown>) {

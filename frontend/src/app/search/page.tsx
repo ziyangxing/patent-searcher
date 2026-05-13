@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { useSearchStore, PatentResult } from "@/store/searchStore";
 import { useState, useRef, useCallback } from "react";
+import { apiPost } from "@/lib/api";
 
 interface SearchPlan {
   technical_field: string;
@@ -35,31 +36,24 @@ export default function SearchPage() {
     setFoundCount(0);
 
     try {
-      const API = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8766/api";
-      const res = await fetch(`${API}/search/intent`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query, top_k: topK }),
-      });
-
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
+      const data = await apiPost<{
+        plan?: SearchPlan;
+        results: PatentResult[];
+        analysis?: string;
+        total: number;
+        message?: string;
+      }>("/search/intent", { query, top_k: topK });
 
       if (data.plan) {
-        setPlan({
-          technical_field: data.plan.technical_field || "",
-          core_features: data.plan.core_features || [],
-          keywords: data.plan.keywords || [],
-          ipc_codes: data.plan.ipc_codes || [],
-          expanded_queries: data.plan.expanded_queries || [],
-        });
+        setPlan(data.plan);
       }
       if (data.results) setResults(data.results);
       if (data.analysis) setAiAnalysis(data.analysis);
+      if (data.message) setStatusMessage(data.message);
       setFoundCount(data.total || 0);
-      setStatusMessage(`检索完成，共 ${data.total || 0} 条结果`);
+      if (!data.message) setStatusMessage(`检索完成，共 ${data.total || 0} 条结果`);
     } catch (err) {
-      const msg = `搜索失败: ${(err as Error).message}. 请确认后端已启动 (http://localhost:8766/api/health)`;
+      const msg = `搜索失败: ${(err as Error).message}`;
       setStatusMessage(msg);
       setAiAnalysis(msg);
     } finally {
