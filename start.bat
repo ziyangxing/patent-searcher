@@ -80,7 +80,7 @@ if not exist "backend\data\faiss_index.bin" (
 
 echo.
 echo [1/2] Starting backend (first run downloads AI model ~80MB)...
-start "PatentSearcher-Backend" /min cmd /c "cd /d %cd%\backend && python run_server.py && pause"
+start "PatentSearcher-Backend" cmd /c "cd /d %cd%\backend && python run_server.py"
 
 echo         Waiting for backend to be ready...
 :wait_backend
@@ -90,7 +90,7 @@ if %errorlevel% neq 0 goto wait_backend
 echo         Backend ready.
 
 echo [2/2] Starting frontend...
-start "PatentSearcher-Frontend" /min cmd /c "cd /d %cd%\frontend && npm run dev"
+start "PatentSearcher-Frontend" cmd /c "cd /d %cd%\frontend && npm run dev"
 
 echo         Waiting for frontend...
 :wait_frontend
